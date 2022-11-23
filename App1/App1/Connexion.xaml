@@ -10,17 +10,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid>
+    <StackPanel Background="#A3A3A3" Height="600">
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
 
         </Grid.ColumnDefinitions>
-        <StackPanel Background="#A3A3A3" Height="600">
+        
             <Button Name="Chauffeur"  Content="Cree un compte chaffeur"  Click="Chauffeur_Click" Margin="20" HorizontalAlignment="Stretch" Grid.Column="0"/>
             <Button Name="usager"  Content="Cree un compte usager"  Click="usager_Click" Margin="20" HorizontalAlignment="Stretch" Grid.Column="1"/>
 
 
+
+        </Grid>
     </StackPanel>
-    </Grid>
 </Page>
