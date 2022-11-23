@@ -9,11 +9,20 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <NavigationView PaneDisplayMode="Left" PaneTitle="MON TITRE">
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Zone 1"/>
+                <NavigationViewItem Content="Clients" Icon="People"/>
+                <NavigationViewItem Content="Agenda" Icon="Calendar"/>
+                <NavigationViewItemSeparator />
+                <NavigationViewItem Content="Commandes" Icon="Shop"/>
+            </NavigationView.MenuItems>
+        </NavigationView>
         <Button x:Name="myButton" Click="myButton_Click">Click M   iciicice</Button>
-        <Button x:Name="bUTTON2" Click="myButton_Click">Click M   iciicice</Button>
-        <Button x:Name="bUTTON2" Click="myButton_Click">Click M   iciicice</Button>
+        
         
     </StackPanel>
 </Window>
