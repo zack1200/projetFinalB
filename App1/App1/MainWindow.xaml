@@ -11,6 +11,8 @@
     mc:Ignorable="d">
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+        <Button x:Name="myButton" Click="myButton_Click">Click M   iciicice</Button>
+        <Button x:Name="bUTTON2" Click="myButton_Click">Click M   iciicice</Button>
+        
     </StackPanel>
 </Window>
