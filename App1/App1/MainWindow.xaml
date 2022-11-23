@@ -11,18 +11,28 @@
     mc:Ignorable="d">
     
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
-        <NavigationView PaneDisplayMode="Left" PaneTitle="MON TITRE">
-            <NavigationView.MenuItems>
-                <NavigationViewItemHeader Content="Zone 1"/>
-                <NavigationViewItem Content="Clients" Icon="People"/>
-                <NavigationViewItem Content="Agenda" Icon="Calendar"/>
-                <NavigationViewItemSeparator />
-                <NavigationViewItem Content="Commandes" Icon="Shop"/>
-            </NavigationView.MenuItems>
-        </NavigationView>
-        <Button x:Name="myButton" Click="myButton_Click">Click M   iciicice</Button>
-        
-        
-    </StackPanel>
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+            <NavigationView PaneDisplayMode="Left" PaneTitle="MON TITRE" Grid.Column="0">
+                <NavigationView.MenuItems>
+                    <NavigationViewItemHeader Content="Zone 1"/>
+                    <NavigationViewItem Content="Connexion" Icon="People" Visibility="Visible"/>
+                    <NavigationViewItem Content="Deconnexion" Icon="Cancel" Visibility="Collapsed"/>
+                    <NavigationViewItemSeparator />
+                    <NavigationViewItem Content="Ajouter un trajet" Icon="Add" Visibility="Collapsed"/>
+                    <NavigationViewItem Content="Modifier un trajet" Icon="PostUpdate" Visibility="Collapsed"/>
+                    
+                    
+                    
+                </NavigationView.MenuItems>
+            </NavigationView>
+
+            <Frame x:Name="mainFrame" Grid.Column="1" />
+        </Grid>
+    </ScrollViewer>
 </Window>

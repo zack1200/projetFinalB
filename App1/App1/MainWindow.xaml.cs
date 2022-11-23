@@ -29,11 +29,9 @@ namespace App1
         public MainWindow()
         {
             this.InitializeComponent();
+            mainFrame.Navigate(typeof(Connexion));
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
-        {
-            myButton.Content = "Clicked";
-        }
+        
     }
 }
