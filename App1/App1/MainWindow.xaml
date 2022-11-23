@@ -20,7 +20,7 @@
             </Grid.ColumnDefinitions>
             <NavigationView PaneDisplayMode="Left" PaneTitle="MON TITRE" Grid.Column="0">
                 <NavigationView.MenuItems>
-                    <NavigationViewItemHeader Content="Zone 1"/>
+                    
                     <NavigationViewItem Content="Connexion" Icon="People" Visibility="Visible"/>
                     <NavigationViewItem Content="Deconnexion" Icon="Cancel" Visibility="Collapsed"/>
                     <NavigationViewItemSeparator />

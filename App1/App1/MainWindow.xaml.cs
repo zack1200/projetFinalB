@@ -29,7 +29,7 @@ namespace App1
         public MainWindow()
         {
             this.InitializeComponent();
-            mainFrame.Navigate(typeof(Connexion));
+            mainFrame.Navigate(typeof(ConnexionB));
         }
 
         

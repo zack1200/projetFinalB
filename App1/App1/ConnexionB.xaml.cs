@@ -15,6 +15,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using System.Reflection;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -24,23 +25,21 @@ namespace App1
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Connexion : Page
+    public sealed partial class ConnexionB : Page
     {
-        public Connexion()
+        public ConnexionB()
         {
             this.InitializeComponent();
         }
 
-        
-
-        private void Chauffeur_Click(object sender, RoutedEventArgs e)
+        private void btConn_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btInsc_Click(object sender, RoutedEventArgs e)
+        private void btInscription_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(Connexion));
         }
     }
 }

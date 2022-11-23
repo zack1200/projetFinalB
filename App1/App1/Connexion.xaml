@@ -10,19 +10,45 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <StackPanel Background="#A3A3A3" Height="600">
-        <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-
-        </Grid.ColumnDefinitions>
+    <ScrollViewer>
+    <StackPanel Background="CornflowerBlue" Height="600">
+        <StackPanel   Margin="50">
+            <TextBox x:Name="tbxNom" Header="Nom"/>
+            <TextBlock x:Name="tblErreurNom" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
         
-            <Button Name="Chauffeur"  Content="Cree un compte chaffeur"  Click="Chauffeur_Click" Margin="20" HorizontalAlignment="Stretch" Grid.Column="0"/>
-            <Button Name="usager"  Content="Cree un compte usager"  Click="usager_Click" Margin="20" HorizontalAlignment="Stretch" Grid.Column="1"/>
+        
+            <TextBox x:Name="tbxPrenom" Header="Prenom"/>
+            <TextBlock x:Name="tblErreurPrenom" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+        
+        
+            <TextBox x:Name="tbxEmail" Header="Email"/>
+            <TextBlock x:Name="tblErreurEmail" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+        
+        
+            <TextBox x:Name="tbxAdd" Header="Addresse"/>
+            <TextBlock x:Name="tblErreurAdd" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
 
+                <ComboBox x:Name="cbVille"  
+                          Header="Ville"
+                          HorizontalAlignment="Stretch">
+                    <x:String>Batiscan</x:String>
+                    <x:String>La Tuque</x:String>
+                    <x:String>Louiseville</x:String>
+                    <x:String>Mékinac</x:String>
+                    <x:String>Shawinigan</x:String>
+                    <x:String>Maskinongé</x:String>
+                    <x:String>Trois-Rivières</x:String>
+                </ComboBox>
+                <TextBlock x:Name="tblErreurVille" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
 
-
-        </Grid>
+                <TextBox x:Name="tbxMdp" Header="Mot de passe"/>
+            <TextBlock x:Name="tblErreurMdp" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+                <CheckBox x:Name="chbxUsager" Content="Je suis un usager"  Margin="10 5 10 10"/>
+                <CheckBox  x:Name="chbxChauff" Content="Je suis un chaffeur"  Margin="10 0 10 10"/>
+                <Button Name="btInsc"  Content="S'inscrire"  Click="btInsc_Click" Margin="20" HorizontalAlignment="Center" Foreground="White" Background="Blue"/>
+            </StackPanel>
+        
+        
     </StackPanel>
+    </ScrollViewer>
 </Page>
