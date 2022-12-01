@@ -24,6 +24,7 @@
                     <NavigationView.MenuItems>
                         <NavigationViewItem Content="connexion" Icon="Admin" Name="Conn"  />
                         
+                        
 
                         <NavigationViewItemSeparator />
                         <NavigationViewItem Content="Recherche employer" Icon="Library" Name="iRecherche" />
