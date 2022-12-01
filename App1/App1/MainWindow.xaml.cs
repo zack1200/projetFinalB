@@ -29,11 +29,25 @@ namespace App1
         public MainWindow()
         {
             this.InitializeComponent();
+            mainFrame.Navigate(typeof(Affichage));
+        }
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            var item = (NavigationViewItem)args.SelectedItem;
+
+            switch (item.Name)
+            {
+                case "Conn":
+                    mainFrame.Navigate(typeof(ConnexionB));
+                    break;
+                
+
+                default:
+                    break;
+            }
+
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
-        {
-            myButton.Content = "Clicked";
-        }
+
     }
 }

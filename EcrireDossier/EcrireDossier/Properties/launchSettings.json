@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EcrireDossier (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "EcrireDossier (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

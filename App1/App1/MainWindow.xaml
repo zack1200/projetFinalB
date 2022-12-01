@@ -9,8 +9,33 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <ScrollViewer>
+        <StackPanel Background="Azure">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <NavigationView PaneDisplayMode="Left" PaneTitle="Gestion projet" Grid.Column="0" IsBackEnabled="True"
+                        SelectionChanged="NavigationView_SelectionChanged">
+
+                    <NavigationView.MenuItems>
+                        <NavigationViewItem Content="connexion" Icon="Admin" Name="Conn"  />
+                        
+
+                        <NavigationViewItemSeparator />
+                        <NavigationViewItem Content="Recherche employer" Icon="Library" Name="iRecherche" />
+                    </NavigationView.MenuItems>
+                </NavigationView>
+                <Frame x:Name="mainFrame" Grid.Column="1" />
+
+
+
+
+            </Grid>
+
+        </StackPanel>
+    </ScrollViewer>
 </Window>

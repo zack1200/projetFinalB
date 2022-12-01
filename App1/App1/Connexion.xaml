@@ -1,0 +1,54 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<!-- Licensed under the MIT License. See LICENSE in the project root for license information. -->
+
+<Page
+    x:Class="App1.Connexion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+    <StackPanel Background="CornflowerBlue" Height="600">
+        <StackPanel   Margin="50">
+            <TextBox x:Name="tbxNom" Header="Nom"/>
+            <TextBlock x:Name="tblErreurNom" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+        
+        
+            <TextBox x:Name="tbxPrenom" Header="Prenom"/>
+            <TextBlock x:Name="tblErreurPrenom" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+        
+        
+            <TextBox x:Name="tbxEmail" Header="Email"/>
+            <TextBlock x:Name="tblErreurEmail" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+        
+        
+            <TextBox x:Name="tbxAdd" Header="Addresse"/>
+            <TextBlock x:Name="tblErreurAdd" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+
+                <ComboBox x:Name="cbVille"  
+                          Header="Ville"
+                          HorizontalAlignment="Stretch">
+                    <x:String>Batiscan</x:String>
+                    <x:String>La Tuque</x:String>
+                    <x:String>Louiseville</x:String>
+                    <x:String>Mékinac</x:String>
+                    <x:String>Shawinigan</x:String>
+                    <x:String>Maskinongé</x:String>
+                    <x:String>Trois-Rivières</x:String>
+                </ComboBox>
+                <TextBlock x:Name="tblErreurVille" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+
+                <TextBox x:Name="tbxMdp" Header="Mot de passe"/>
+            <TextBlock x:Name="tblErreurMdp" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
+                <CheckBox x:Name="chbxUsager" Content="Je suis un usager"  Margin="10 5 10 10"/>
+                <CheckBox  x:Name="chbxChauff" Content="Je suis un chaffeur"  Margin="10 0 10 10"/>
+                <Button Name="btInsc"  Content="S'inscrire"  Click="btInsc_Click" Margin="20" HorizontalAlignment="Center" Foreground="White" Background="Blue"/>
+            </StackPanel>
+        
+        
+    </StackPanel>
+    </ScrollViewer>
+</Page>
