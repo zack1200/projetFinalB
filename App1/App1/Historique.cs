@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    class Historique
+    internal class Historique
     {
+        string date;
+
+        public string Date { get => date; set => date = value; }
     }
 }

@@ -29,6 +29,7 @@ namespace App1
         public Affichage()
         {
             this.InitializeComponent();
+            listTrajet.ItemsSource = GestionBD.getInstance().GetTrajets();
         }
 
         private void btAchat_Click(object sender, RoutedEventArgs e)
