@@ -32,7 +32,8 @@ namespace App1
 
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
-            commande.CommandText = "select nom,heure_depart,ville_arrivee,heure_arrivee,type_vehicule,nb_place,prix,usager from trajet,ville where trajet.ville=ville.id_ville;";
+            commande.CommandText = "select nom,heure_depart,ville_arrivee,heure_arrivee,type_vehicule,nb_place,prix,usager from trajet,ville " +
+                "where trajet.ville=ville.id_ville and date>=current_date;";
 
             con.Open();
             MySqlDataReader r = commande.ExecuteReader();
@@ -43,15 +44,12 @@ namespace App1
                 {
                     Usager = r.GetString("usager"),
                     Heuredep = r.GetString("heure_depart"),
-                    Villedep = r.GetString("nom"),
-                    
+                    Villedep = r.GetString("nom"),                    
                     Heurearr = r.GetString("heure_arrivee"),
-                   Villearr=r.GetString("ville_arrivee"),
+                    Villearr=r.GetString("ville_arrivee"),
                     Type = r.GetString("type_vehicule"),
                     Nbplace = r.GetString("nb_place"),
                     Prix = r.GetString("prix"),
-
-
 
                 };
 

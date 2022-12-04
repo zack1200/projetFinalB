@@ -28,17 +28,16 @@
             <TextBox x:Name="tbxAdd" Header="Addresse"/>
             <TextBlock x:Name="tblErreurAdd" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
 
-                <ComboBox x:Name="cbVille"  
-                          Header="Ville"
-                          HorizontalAlignment="Stretch">
-                    <x:String>Batiscan</x:String>
-                    <x:String>La Tuque</x:String>
-                    <x:String>Louiseville</x:String>
-                    <x:String>Mékinac</x:String>
-                    <x:String>Shawinigan</x:String>
-                    <x:String>Maskinongé</x:String>
-                    <x:String>Trois-Rivières</x:String>
+                <ComboBox x:Name="listVille" Header="Votre ville : " HorizontalAlignment="Stretch">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:Ville" >
+                            <StackPanel >
+                                <TextBlock Text="{x:Bind Nom}" Margin="5,5,5,10" FontWeight="Normal" FontSize="20" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
                 </ComboBox>
+            
                 <TextBlock x:Name="tblErreurVille" Text="Entrez un nom valide" Foreground="Red"  Visibility="Collapsed"/>
 
                 <TextBox x:Name="tbxMdp" Header="Mot de passe"/>

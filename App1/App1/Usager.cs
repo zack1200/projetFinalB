@@ -13,7 +13,7 @@ namespace App1
         string email;
         string mdp;
         string add;
-        string ville;
+        int ville;
         string telephone;
         string statut;
         string portefeuille;
@@ -25,7 +25,7 @@ namespace App1
         public string Email { get => email; set => email = value; }
         public string Mdp { get => mdp; set => mdp = value; }
         public string Add { get => add; set => add = value; }
-        public string Ville { get => ville; set => ville = value; }
+        public int Ville { get => ville; set => ville = value; }
         public string Telephone { get => telephone; set => telephone = value; }
         public string Statut { get => statut; set => statut = value; }
         public string Portefeuille { get => portefeuille; set => portefeuille = value; }

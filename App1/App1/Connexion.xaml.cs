@@ -29,17 +29,26 @@ namespace App1
         public Connexion()
         {
             this.InitializeComponent();
+            listVille.ItemsSource = GestionUsagers.getInstance().GetVille();
         }
-
-        
-
-        private void Chauffeur_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btInsc_Click(object sender, RoutedEventArgs e)
         {
+            Ville vi = listVille.SelectedItem as Ville;
+
+
+            Usager u = new Usager()
+            {
+                Nom=tbxNom.Text,
+                Prenom=tbxPrenom.Text,
+                Email=tbxEmail.Text,
+                Add=tbxAdd.Text,
+                Ville=vi.IdV,
+                Mdp=tbxMdp.Text,
+                Statut="chauffeur",
+                Telephone="0000000000"
+            };
+            GestionUsagers.getInstance().AjouterUsager(u);
+
 
         }
     }
