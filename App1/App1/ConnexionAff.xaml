@@ -1,0 +1,30 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. -->
+<!-- Licensed under the MIT License. See LICENSE in the project root for license information. -->
+
+<ContentDialog
+    x:Class="App1.ConnexionAff"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Connexion"
+    PrimaryButtonText="Se connecter"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    CloseButtonText="nnuler">
+
+    <Grid x:Name="Connexion">
+        <StackPanel Background="CornflowerBlue" >
+            <StackPanel   Margin="15 15 15 15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Bienvenue" FontWeight="Bold" FontSize="25" />
+            </StackPanel>
+            <StackPanel Margin="50" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <TextBox x:Name="tbxEmail" Header="Email"/>
+                <TextBlock x:Name="tblErreurEmail" Text="Vous avez une erreur dans votre email ou votre password." Foreground="Red"  Visibility="Collapsed"/>
+                <TextBox x:Name="tbxMdp" Header="Mot de passe"/>
+                <TextBlock x:Name="tblErreurMdp" Text="Vous avez une erreur dans votre email ou votre password. " Foreground="Red"  Visibility="Collapsed"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</ContentDialog>

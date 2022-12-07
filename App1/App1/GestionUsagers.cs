@@ -17,7 +17,13 @@ namespace App1
         MySqlConnection con;
         ObservableCollection<Usager> listeU;
         ObservableCollection<Ville> listeV;
+        bool connexion =false;
         static GestionUsagers gestionUsagers = null;
+        string nom ,email,statut,mdp;
+
+        public string Nom { get => nom; }
+        public string Email { get => email; }
+        public string Statut { get => statut;  }
 
         public GestionUsagers()
         {
@@ -104,6 +110,43 @@ namespace App1
                 if (con.State == System.Data.ConnectionState.Open)
                     con.Close();
             }
+        }
+
+        public bool Connexion(string e, string m)
+        {
+           
+
+            try
+            {
+                
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = " Select nom, statut from usager where email =@email and mot_de_passe = @mdp ";
+                commande.Parameters.AddWithValue("@email", e);
+                commande.Parameters.AddWithValue("@mdp", m);
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+                if (r.Read())
+                {
+                    statut = r.GetString("statut");
+                    connexion = true;
+                    nom = r.GetString("nom");
+
+                }
+                else
+                {
+                    connexion = false;
+                }
+
+                con.Close();
+                
+            }
+            catch (MySqlException ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            return connexion;
         }
 
 

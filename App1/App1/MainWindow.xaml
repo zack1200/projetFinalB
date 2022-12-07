@@ -11,41 +11,28 @@
     mc:Ignorable="d">
     
 
-    <ScrollViewer>
-        <StackPanel Background="SkyBlue">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                    
-                <NavigationView PaneDisplayMode="Left" PaneTitle="Gestion projet" Grid.Column="0" IsBackEnabled="True"
+   
+
+                <NavigationView x:Name="stk" PaneDisplayMode="Left" PaneTitle="Gestion projet" Grid.Column="0" IsBackEnabled="True"
                         SelectionChanged="NavigationView_SelectionChanged">
 
                     <NavigationView.MenuItems>
                         <NavigationViewItem Content="Afficher les trajets" Icon="Home" Name="Aff"  />
                         <NavigationViewItem Content="Connexion" Icon="Account" Name="Conn"  />
-                        <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  />
-                        <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  />
-                        <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr"  />
+                        <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  Visibility="Collapsed"/>
+                        <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  Visibility="Collapsed"/>
+                        <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr" Visibility="Collapsed" />
                         
                         
 
                         <NavigationViewItemSeparator />
-                        <NavigationViewItem Content="Recherche employer" Icon="Library" Name="iRecherche" />
+                        
                     </NavigationView.MenuItems>
+                    
+                    <Frame x:Name="mainFrame" Grid.Column="1" />
+
                 </NavigationView>
-                <Frame x:Name="mainFrame" Grid.Column="1" />
+                
 
-
-
-
-            </Grid>
-
-        </StackPanel>
-    </ScrollViewer>
+  
 </Window>
