@@ -12,17 +12,26 @@
     
 
     <ScrollViewer>
-        <StackPanel Background="Azure">
+        <StackPanel Background="SkyBlue">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="300" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                    
                 <NavigationView PaneDisplayMode="Left" PaneTitle="Gestion projet" Grid.Column="0" IsBackEnabled="True"
                         SelectionChanged="NavigationView_SelectionChanged">
 
                     <NavigationView.MenuItems>
-                        <NavigationViewItem Content="connexion" Icon="Admin" Name="Conn"  />
+                        <NavigationViewItem Content="Afficher les trajets" Icon="Home" Name="Aff"  />
+                        <NavigationViewItem Content="Connexion" Icon="Account" Name="Conn"  />
+                        <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  />
+                        <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  />
+                        <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr"  />
                         
                         
 

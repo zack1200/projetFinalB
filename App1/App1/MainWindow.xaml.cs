@@ -40,8 +40,15 @@ namespace App1
                 case "Conn":
                     mainFrame.Navigate(typeof(ConnexionB));
                     break;
-                
-
+                case "Aff":
+                    mainFrame.Navigate(typeof(Affichage));
+                    break;
+                case "AjtVille":
+                    mainFrame.Navigate(typeof(AjtVille));
+                    break;
+                case "Admintr":
+                    mainFrame.Navigate(typeof(Admintr));
+                    break;
                 default:
                     break;
             }
