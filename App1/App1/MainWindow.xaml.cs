@@ -31,17 +31,59 @@ namespace App1
             this.InitializeComponent();
             mainFrame.Navigate(typeof(Affichage));
         }
-        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        private async void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             var item = (NavigationViewItem)args.SelectedItem;
 
             switch (item.Name)
             {
                 case "Conn":
-                    mainFrame.Navigate(typeof(ConnexionB));
-                    break;
-                
 
+                    //mainFrame.Navigate(typeof(ConnexionB));
+                    ConnexionAff dialog = new ConnexionAff();
+                    dialog.XamlRoot = stk.XamlRoot;
+                    dialog.DefaultButton = ContentDialogButton.Primary;
+
+
+
+                    await dialog.ShowAsync();
+
+
+
+                    if (dialog.Ok == true)
+                    {
+                        if (GestionUsagers.getInstance().Statut.Equals("Passager"))
+                        {
+                            //connexion.Visibility = Visibility.Collapsed;
+                            Aff.Visibility= Visibility.Visible;
+                            
+
+
+                        }
+                        if (GestionUsagers.getInstance().Statut.Equals("Chauffeur"))
+                        {
+                            //connexion.Visibility = Visibility.Collapsed;
+                            Aff.Visibility = Visibility.Visible;
+                            AjtTrajet.Visibility = Visibility.Visible;
+
+                        }
+                        else
+                        {
+
+                        }
+                    }
+
+
+                    break;
+                case "Aff":
+                    mainFrame.Navigate(typeof(Affichage));
+                    break;
+                case "AjtVille":
+                    mainFrame.Navigate(typeof(AjtVille));
+                    break;
+                case "Admintr":
+                    mainFrame.Navigate(typeof(Admintr));
+                    break;
                 default:
                     break;
             }

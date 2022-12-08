@@ -12,8 +12,12 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Admintr.xaml" />
     <None Remove="Affichage.xaml" />
+    <None Remove="AjtTrajet.xaml" />
+    <None Remove="AjtVille.xaml" />
     <None Remove="Connexion.xaml" />
+    <None Remove="ConnexionAff.xaml" />
     <None Remove="ConnexionB.xaml" />
   </ItemGroup>
 
@@ -41,6 +45,26 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ConnexionAff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AjtTrajet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Admintr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AjtVille.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Affichage.xaml">
