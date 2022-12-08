@@ -10,8 +10,116 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+   
+        <StackPanel Background="CornflowerBlue" Height="auto">
+        <StackPanel   Margin="15">
+            <TextBlock Text="Nouveau trajet" FontWeight="Bold" FontSize="25" />
+        </StackPanel>
+        <StackPanel>
+            
 
-    <Grid>
+            <StackPanel   Margin="15">
+                <DatePicker Header="Choisir une date du trajet " x:Name="tbxDatDebut"/>
+                <TextBlock x:Name="tbxDatDErr" Text="Entrez une date du tajet " Foreground="Red"  Visibility="Collapsed"/>
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-    </Grid>
+                <ComboBox x:Name="listVille" Header="Ville de depart : " HorizontalAlignment="Stretch" Grid.Column="0" Margin="15">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="local:Ville" >
+                        <StackPanel >
+                                <TextBlock Text="{x:Bind Nom}"  FontWeight="Normal"  />
+                            </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+                <TimePicker Header="Heure depart" MinuteIncrement="15" Grid.Column="1" HorizontalAlignment="Center"/>
+            </Grid>
+            <TextBlock Text="Est ce qu'il y'aura un arret" Margin="15"></TextBlock>
+            <StackPanel Margin="10 10 10 10" Grid.Column="0" Orientation="Horizontal" Padding="5">
+                
+                <RadioButton x:Name="br1" Content="Oui " />
+                <RadioButton x:Name="br2" Content="Aucun" />
+                <TextBlock x:Name="tbxStatutErr" Text="Veuiller indiquer si il y'a un arret ou pas" Foreground="red" Visibility="Collapsed" />
+            </StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ComboBox x:Name="listVilleF" Header="Ville arrive : " HorizontalAlignment="Stretch" Grid.Column="0" Margin="15" >
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:Ville" >
+                            <StackPanel >
+                                <TextBlock Text="{x:Bind Nom}"  FontWeight="Normal"  />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TimePicker Header="Heure arrive" MinuteIncrement="15" Grid.Column="1" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="10 10 10 10" Grid.Column="0" >
+                    <ComboBox x:Name="TypeV"  Header="Type de vehicule" HorizontalAlignment="Stretch">
+                        <x:String>Vus</x:String>
+                        <x:String>Berline</x:String>
+                        <x:String>Familliale</x:String>
+                    </ComboBox>
+                    <TextBlock x:Name="tbxTypeErr" Text="Veuillez choisir l'equipe" Foreground="red" Visibility="Collapsed" />
+                </StackPanel>
+                <StackPanel Margin="10 10 10 10" Grid.Column="1">
+                    <ComboBox x:Name="NbrPlace"  
+                          Header="Nombre de place disponible"
+                          HorizontalAlignment="Stretch">
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                    </ComboBox>
+                    <TextBlock x:Name="tbxNbPlceErr" Text="Veuillez choisir l'equipe" Foreground="red" Visibility="Collapsed" />
+                </StackPanel>
+                
+            </Grid>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="10 10 10 10" Grid.Column="0" >
+                    <TextBox x:Name="tbxEmail" Header="Email"/>
+                    <TextBlock x:Name="tblErreurEmail" Text="Entrez un email valide" Foreground="Red"  Visibility="Collapsed"/>
+                </StackPanel>
+                <StackPanel Margin="10 10 10 10" Grid.Column="1">
+
+                    <TextBox x:Name="tbxId" Header="Votre matricule "/>
+                    <TextBlock x:Name="tblErreurPrenom" Text="Entrez un matricule valide" Foreground="Red"  Visibility="Collapsed"/>
+                </StackPanel>
+
+
+            </Grid>
+
+
+
+        </StackPanel>
+
+            <Button Name="btAjouter"  Content="Ajouter"  Click="btAjouter_Click" Margin="20" HorizontalAlignment="Center" />
+
+            <TextBlock x:Name="tbxValide"  Margin="10" HorizontalAlignment="Center" Text="le joeur a ete ajouter  " Foreground="Green"  Visibility="Collapsed"/>
+
+
+
+    </StackPanel>
+    </ScrollViewer>
+
 </Page>

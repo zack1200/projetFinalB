@@ -29,6 +29,13 @@ namespace App1
         public AjtTrajet()
         {
             this.InitializeComponent();
+            listVille.ItemsSource = GestionUsagers.getInstance().GetVille();
+            listVilleF.ItemsSource = GestionUsagers.getInstance().GetVille();
+        }
+
+        private void btAjouter_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

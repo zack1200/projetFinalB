@@ -81,6 +81,9 @@ namespace App1
                 case "AjtVille":
                     mainFrame.Navigate(typeof(AjtVille));
                     break;
+                case "AjtTrajet":
+                    mainFrame.Navigate(typeof(AjtTrajet));
+                    break;
                 case "Admintr":
                     mainFrame.Navigate(typeof(Admintr));
                     break;
