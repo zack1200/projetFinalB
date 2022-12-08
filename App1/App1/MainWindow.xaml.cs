@@ -56,7 +56,7 @@ namespace App1
                         {
                             //connexion.Visibility = Visibility.Collapsed;
                             Aff.Visibility= Visibility.Visible;
-                            AjtVille.Visibility= Visibility.Visible;
+                            
 
 
                         }
@@ -64,7 +64,7 @@ namespace App1
                         {
                             //connexion.Visibility = Visibility.Collapsed;
                             Aff.Visibility = Visibility.Visible;
-                            AjtVille.Visibility = Visibility.Visible;
+                            AjtTrajet.Visibility = Visibility.Visible;
 
                         }
                         else
