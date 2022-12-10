@@ -132,6 +132,58 @@ namespace App1
             return listeR;
 
         }
+        public void AjouterTrajet(Trajet c)
+        {
+            string Date = c.Date ;
+            string heuredep = c.Heuredep;
+            int villedep = c.NumVD;
+            string villearret = c.Villearret;
+            string heurearr = c.Heurearr;
+            string villearr = c.Villearr;
+            string type = c.Type;
+            string nbplace = c.Nbplace;
+            string prix = c.Prix;
+            string statut = c.Statut;
+            string usager = c.Usager;
+            string email = c.Email;
+            
+
+
+            try
+            {
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "insert into trajet (date, heure_depart, ville, ville_arret, heure_arrivee, ville_arrivee, type_vehicule, nb_place, prix, statut, usager, email) " +
+                    "VALUES" +
+                    "             (@date,@heuredep,@villedep,@villearret,@heurearr,@villearr,@type,@nbplace,@prix,@statut,@usager,@email); ";
+
+                commande.Parameters.AddWithValue("@date", Date);
+                commande.Parameters.AddWithValue("@heuredep", heuredep);
+                commande.Parameters.AddWithValue("@villedep", villedep);
+                commande.Parameters.AddWithValue("@villearret", villearret);
+                commande.Parameters.AddWithValue("@heurearr",heurearr );
+                commande.Parameters.AddWithValue("@villearr", villearr);
+                commande.Parameters.AddWithValue("@type", type);
+                commande.Parameters.AddWithValue("@nbplace", nbplace);
+                commande.Parameters.AddWithValue("@prix", prix);
+                commande.Parameters.AddWithValue("@statut", statut);
+                commande.Parameters.AddWithValue("@usager", usager);
+                commande.Parameters.AddWithValue("@email", email);
+
+
+                con.Open();
+                commande.Prepare();
+                int i = commande.ExecuteNonQuery();
+
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+        }
+
 
 
 

@@ -22,6 +22,7 @@ namespace App1
         string usager;
         string email;
         string historique;
+        int numVD;
 
         public string Date { get => date; set => date = value; }
         public string Heuredep { get => heuredep; set => heuredep = value; }
@@ -36,5 +37,6 @@ namespace App1
         public string Usager { get => usager; set => usager = value; }
         public string Email { get => email; set => email = value; }
         public string Historique { get => historique; set => historique = value; }
+        public int NumVD { get => numVD; set => numVD = value; }
     }
 }
