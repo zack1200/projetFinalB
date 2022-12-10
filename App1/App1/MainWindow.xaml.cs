@@ -78,6 +78,9 @@ namespace App1
                 case "Aff":
                     mainFrame.Navigate(typeof(Affichage));
                     break;
+                case "Res":
+                    mainFrame.Navigate(typeof(Reservation));
+                    break;
                 case "AjtVille":
                     mainFrame.Navigate(typeof(AjtVille));
                     break;

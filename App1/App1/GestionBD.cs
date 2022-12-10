@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,7 +37,7 @@ namespace App1
 
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
-            commande.CommandText = "select nom,heure_depart,ville_arrivee,heure_arrivee,type_vehicule,nb_place,prix,usager from trajet,ville " +
+            commande.CommandText = "select id_trajet,date,nom,heure_depart,ville_arrivee,heure_arrivee,type_vehicule,nb_place,prix,usager from trajet,ville " +
                 "where trajet.ville=ville.id_ville and date>=CURDATE();";
 
             con.Open();
@@ -46,6 +47,7 @@ namespace App1
             {
                 Trajet c = new Trajet()
                 {
+                    Date=r.GetString("date"),
                     Usager = r.GetString("usager"),
                     Heuredep = r.GetString("heure_depart"),
                     Villedep = r.GetString("nom"),                    
@@ -54,6 +56,7 @@ namespace App1
                     Type = r.GetString("type_vehicule"),
                     Nbplace = r.GetString("nb_place"),
                     Prix = r.GetString("prix"),
+                    Idtra = r.GetInt32("id_trajet"),
                 };
                 liste.Add(c);
             }
@@ -183,9 +186,30 @@ namespace App1
                     con.Close();
             }
         }
+        public int Resa(Trajet c)
 
+        {
+            int Id_trajet = c.Idtra;
+            
+            int retour = 0;
 
+            MySqlCommand commande = new MySqlCommand();
+            commande.Connection = con;
+            commande.CommandText = "update Trajet set nb_place = nb_place-1 Where id_trajet = @id_trajet";
+            commande.Parameters.AddWithValue("@id_trajet", Id_trajet);           
+            con.Open();
+            commande.Prepare();
+            retour = commande.ExecuteNonQuery();
 
+            con.Close();
 
+            return retour;
+        }
     }
+
+
+
+
+
 }
+
