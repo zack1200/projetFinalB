@@ -32,9 +32,6 @@ namespace App1
             listTrajet.ItemsSource = GestionBD.getInstance().GetTrajets();
         }
 
-        private void btAchat_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -19,6 +19,7 @@
     <None Remove="Connexion.xaml" />
     <None Remove="ConnexionAff.xaml" />
     <None Remove="ConnexionB.xaml" />
+    <None Remove="Reservation.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +46,11 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Reservation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ConnexionAff.xaml">

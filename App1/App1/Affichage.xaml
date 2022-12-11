@@ -68,11 +68,7 @@
                                     <TextBlock Text="{x:Bind Prix}" Foreground="Black" 
                     Height="50"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                     </StackPanel>
-                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Acheter" HorizontalAlignment="Center" x:Name="btAchat"
-                    Width="150" FontSize="15" Background="Blue" Foreground="White"
-                    Click="btAchat_Click" />
-                    </StackPanel>
+                    
 
                 </StackPanel>
 
