@@ -117,7 +117,7 @@ namespace App1
                 {
                    
                  Date = tbxDat.SelectedDate.Value.ToString("yyyy-MM-dd"),
-                 Heuredep =tbxHrDep.SelectedTime.ToString(),
+                 Heuredep =tbxHrDep.Time.ToString(),
                  NumVD = vi.IdV,
                  Villearret =arret,
                  Heurearr =tbxHrArr.Time.ToString(),

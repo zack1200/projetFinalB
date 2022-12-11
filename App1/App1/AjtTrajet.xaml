@@ -126,10 +126,10 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Margin="10 10 10 10" Grid.Column="0" >
                         <ComboBox x:Name="Prix"  
-                          Header="Nombre de place disponible"
+                          Header="Prix"
                           HorizontalAlignment="Stretch">
+                            <x:String>10</x:String>
                             <x:String>15</x:String>
-                            <x:String>30</x:String>
 
                         </ComboBox>
                         <TextBlock x:Name="tblErreurPrixl" Text="Veuillez entrer un prix valide " Foreground="Red"  Visibility="Collapsed"/>

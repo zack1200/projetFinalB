@@ -81,6 +81,9 @@ namespace App1
                 case "Res":
                     mainFrame.Navigate(typeof(Reservation));
                     break;
+                case "Ins":
+                    mainFrame.Navigate(typeof(Connexion));
+                    break;
                 case "AjtVille":
                     mainFrame.Navigate(typeof(AjtVille));
                     break;

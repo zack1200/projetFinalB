@@ -19,7 +19,8 @@
                     <NavigationView.MenuItems>
                         <NavigationViewItem Content="Afficher les trajets" Icon="Home" Name="Aff"  />
                         <NavigationViewItem Content="Connexion" Icon="Account" Name="Conn"  />
-                        <NavigationViewItem Content="Reservation d'un trajet " Icon="Home" Name="Res"  Visibility="Visible"/>
+                         <NavigationViewItem Content="Inscription" Icon="Account" Name="Ins" />
+                         <NavigationViewItem Content="Reservation d'un trajet " Icon="Home" Name="Res"  Visibility="Visible"/>
                         <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  Visibility="Visible"/>
                         <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  Visibility="Visible"/>
                         <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr" Visibility="Visible" />
