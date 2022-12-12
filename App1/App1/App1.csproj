@@ -21,6 +21,7 @@
     <None Remove="ConnexionB.xaml" />
     <None Remove="ListeRes.xaml" />
     <None Remove="Reservation.xaml" />
+    <None Remove="Ticket.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +48,11 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Ticket.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ListeRes.xaml">

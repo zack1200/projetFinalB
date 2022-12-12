@@ -83,5 +83,32 @@ namespace App1
             con.Close();
             return liste;
         }
+        public ObservableCollection<Resa> Ticket(string idu)
+        {
+            liste.Clear();
+
+            MySqlCommand commande = new MySqlCommand();
+            commande.Connection = con;
+            commande.CommandText = "select nom,prenom,date,nb_place from reservation,usager,trajet where usager.id_usager=reservation.id_usager and " +
+                "trajet.id_trajet = reservation.id_trajet and date>= curdate() and reservation.id_usager = '" + idu + "'; ";
+
+            con.Open();
+            MySqlDataReader r = commande.ExecuteReader();
+
+            while (r.Read())
+            {
+                Resa c = new Resa()
+                {
+                    Nom = r.GetString("nom"),
+                    Prenom = r.GetString("prenom"),
+                    Date = r.GetString("date"),
+                    Nbp = r.GetString("nb_place"),
+                };
+                liste.Add(c);
+            }
+            r.Close();
+            con.Close();
+            return liste;
+        }
     }
 }

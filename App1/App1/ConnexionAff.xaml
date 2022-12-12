@@ -20,9 +20,9 @@
                 <TextBlock Text="Bienvenue" FontWeight="Bold" FontSize="25" />
             </StackPanel>
             <StackPanel Margin="50" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                <TextBox x:Name="tbxEmail" Header="Email"/>
+                <TextBox x:Name="tbxEmail" Text="test@gmail.com" Header="Email"/>
                 <TextBlock x:Name="tblErreurEmail" Text="Vous avez une erreur dans votre email ou votre password." Foreground="Red"  Visibility="Collapsed"/>
-                <TextBox x:Name="tbxMdp" Header="Mot de passe"/>
+                <PasswordBox x:Name="tbxMdp"  Header="Mot de passe"/>
                 <TextBlock x:Name="tblErreurMdp" Text="Vous avez une erreur dans votre email ou votre password. " Foreground="Red"  Visibility="Collapsed"/>
             </StackPanel>
         </StackPanel>

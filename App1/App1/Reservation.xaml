@@ -11,7 +11,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <ScrollViewer>
-        <ListView x:Name="listTrajet"  >
+        <ListView x:Name="listTrajet" SelectionChanged="listTrajet_SelectionChanged" >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Trajet">
 
@@ -69,11 +69,8 @@
                     Height="50"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                                 </StackPanel>
                                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="resa" Visibility="Visible">
-                                    <Button Content="Acheter" HorizontalAlignment="Center" x:Name="btAchat"
-                    Width="150" FontSize="15" Background="Blue" Foreground="White"
-                    Click="btAchat_Click" Visibility="Visible" />
-                                    <TextBlock Text="Veuiller selectionner le trajet avant de le reserver" Foreground="Black" 
-                    Height="50" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" x:Name="tbxErrResa" />
+                                    <TextBlock Text="Reservation reussie" Foreground="Green" 
+                                     Height="50" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" x:Name="tbxResa" />
                                 </StackPanel>
 
                             </StackPanel>

@@ -20,6 +20,7 @@
                     <DatePicker Header="Choisir une date de fin " x:Name="tbxDatFin" Padding="15"/>
                 </StackPanel>
                 <Button Name="btRecherche"  Content="Recherche "  Click="btRecherche_Click"  HorizontalAlignment="Center" Foreground="White" Background="CadetBlue" />
+                <Button Name="btExpo"  Content="Exporter les trajet "  Click="btExpo_Click"  HorizontalAlignment="Center" Foreground="White" Background="CadetBlue" />
                 <TextBlock x:Name="tblErreurRe"  Text="Veuillez entrer une date valide  " Foreground="Red"  Visibility="Collapsed" HorizontalAlignment="Center"/>
             </StackPanel>
             <StackPanel>

@@ -15,6 +15,7 @@ namespace App1
         string prenom;
         string nbp;
         string date;
+        string message;
 
         public string Id_Usager { get => id_Usager; set => id_Usager = value; }
         public string Email { get => email; set => email = value; }

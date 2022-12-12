@@ -40,31 +40,57 @@ namespace App1
 
 
         }
-        private void btAchat_Click(object sender, RoutedEventArgs e)
-        {
-            int valide = 0;
+        //private void btAchat_Click(object sender, RoutedEventArgs e)
+        //{
+        //    int valide = 0;
             
-            reset();
+        //    reset();
 
-            //if (listTrajet.SelectedItem is null)
-            //{
-            //    tbxErrResa.Visibility = Visibility.Visible;
-            //}
+        //    //if (listTrajet.SelectedItem is null)
+        //    //{
+        //    //    tbxErrResa.Visibility = Visibility.Visible;
+        //    //}
 
-            if (valide == 0 )
-            {
-                Trajet c = listTrajet.SelectedItem as Trajet;
-                GestionResa.getInstance().Ajouter_Resa(GestionUsagers.getInstance().Id_usager , GestionUsagers.getInstance().Email, c);
-                GestionBD.getInstance().Resa(c);
-                GestionBD.getInstance().ResaP(c);
-                GestionBD.getInstance().ResaG(c);
-            }
-        }
+        //    if (valide == 0 )
+        //    {
+        //        Trajet c = listTrajet.SelectedItem as Trajet;
+        //        GestionResa.getInstance().Ajouter_Resa(GestionUsagers.getInstance().Id_usager , GestionUsagers.getInstance().Email, c);
+        //        GestionBD.getInstance().Resa(c);
+        //        GestionBD.getInstance().ResaP(c);
+        //        GestionBD.getInstance().ResaG(c);
+        //    }
+        //}
+
         private void reset()
         {
             
 
 
+        }
+
+        private void listTrajet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(listTrajet.SelectedItem != null)
+            {
+                int valide = 0;
+
+                reset();
+
+                //if (listTrajet.SelectedItem is null)
+                //{
+                //    tbxErrResa.Visibility = Visibility.Visible;
+                //}
+
+                if (valide == 0)
+                {
+                    Trajet c = listTrajet.SelectedItem as Trajet;
+                    GestionResa.getInstance().Ajouter_Resa(GestionUsagers.getInstance().Id_usager, GestionUsagers.getInstance().Email, c);
+                    GestionBD.getInstance().Resa(c);
+                    GestionBD.getInstance().ResaP(c);
+                    GestionBD.getInstance().ResaG(c);         
+                }
+            }
+            
         }
     }
 }

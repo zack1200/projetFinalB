@@ -40,7 +40,7 @@ namespace App1
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
            
-            if (GestionUsagers.getInstance().Connexion(tbxEmail.Text, tbxMdp.Text))
+            if (GestionUsagers.getInstance().Connexion(tbxEmail.Text, tbxMdp.Password))
             {
                 statut = GestionUsagers.getInstance().Statut;
                 ok = true;

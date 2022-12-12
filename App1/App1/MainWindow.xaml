@@ -20,12 +20,15 @@
                         <NavigationViewItem Content="Afficher les trajets" Icon="Home" Name="Aff"  />
             <NavigationViewItem Content="Connexion" Icon="Account" Name="Conn"   Visibility="Visible"/>
             <NavigationViewItem Content="Inscription" Icon="Account" Name="Ins"  Visibility="Visible"/>
-                         <NavigationViewItem Content="Reservation d'un trajet " Icon="Home" Name="Res"  Visibility="Collapsed"/>
-            <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  Visibility="Collapsed"/>
-            <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  Visibility="Collapsed"/>
-            <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr" Visibility="Collapsed" />
-            <NavigationViewItem Content="Reservations " Icon="List" Name="ListRes" Visibility="Collapsed" />
-                        
+                <NavigationViewItem Content="Reservation d'un trajet " Icon="Home" Name="Res"  Visibility="Collapsed"/>
+                <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  Visibility="Collapsed"/>
+                <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  Visibility="Collapsed"/>
+                <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr" Visibility="Collapsed" />
+                <NavigationViewItem Content="Reservations " Icon="List" Name="ListRes" Visibility="Collapsed" />
+                <NavigationViewItem Content="Ticket(s) " Icon="Caption" Name="Tick" Visibility="Collapsed" />
+                
+
+
 
 
 

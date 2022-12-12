@@ -56,6 +56,7 @@ namespace App1
                             Ins.Visibility = Visibility.Collapsed;
                             Conn.Visibility = Visibility.Collapsed;
                             dec.Visibility = Visibility.Visible;
+                            Tick.Visibility = Visibility.Visible;
 
                         }
                         if (GestionUsagers.getInstance().Statut.Equals("Chauffeur"))
@@ -111,6 +112,9 @@ namespace App1
                     break;
                 case "dec":
                     deconnexion();
+                    break;
+                case "Tick":
+                    mainFrame.Navigate(typeof(Ticket));
                     break;
 
                 default:
