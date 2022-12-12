@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.System;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace App1
 {
@@ -21,14 +23,14 @@ namespace App1
         static GestionUsagers gestionUsagers = null;
         string nom ,email,statut,mdp,id_usager;
 
-        public string Nom { get => nom; }
-        public string Email { get => email; }
-        public string Statut { get => statut;  }
-        public string Id_usager { get => id_usager; }
+        public string Nom { get => nom; set => nom =value; }
+        public string Email { get => email; set => email = value; }
+        public string Statut { get => statut; set => statut = value; }
+        public string Id_usager { get => id_usager; set => id_usager = value; }
 
         public GestionUsagers()
         {
-            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_eq7;Uid=2023268;Pwd=2023268;"); ;
+            con = new MySqlConnection("Server=cours.cegep3r.info;Database=2023268-zakaria-el-bahodi;Uid=2023268;Pwd=2023268;");
             listeU = new ObservableCollection<Usager>();
             listeV = new ObservableCollection<Ville>();
         }
@@ -92,7 +94,7 @@ namespace App1
                 commande.Parameters.AddWithValue("@nom", nom);
                 commande.Parameters.AddWithValue("@prenom", prenom);
                 commande.Parameters.AddWithValue("@email", email);
-                commande.Parameters.AddWithValue("@mot_de_passe", mdp);
+                commande.Parameters.AddWithValue("@mot_de_passe", genererSHA256(mdp)) ;
                 commande.Parameters.AddWithValue("@adresse", add);
                 commande.Parameters.AddWithValue("@ville", ville);
                 commande.Parameters.AddWithValue("@telephone", telephone);
@@ -124,7 +126,7 @@ namespace App1
                 commande.Connection = con;
                 commande.CommandText = " Select nom, statut, id_usager from usager where email =@email and mot_de_passe = @mdp ";
                 commande.Parameters.AddWithValue("@email", e);
-                commande.Parameters.AddWithValue("@mdp", m);
+                commande.Parameters.AddWithValue("@mdp", genererSHA256(m));
                 con.Open();
                 MySqlDataReader r = commande.ExecuteReader();
                 if (r.Read())
@@ -152,6 +154,17 @@ namespace App1
             return connexion;
         }
 
+        private string genererSHA256(string texte)
+        {
+            var sha256 = SHA256.Create();
+            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(texte));
+
+            StringBuilder sb = new StringBuilder();
+            foreach (Byte b in bytes)
+                sb.Append(b.ToString("x2"));
+
+            return sb.ToString();
+        }
 
 
 

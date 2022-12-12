@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace App1
 
         public GestionBD()
         {
-            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_eq7;Uid=2023268;Pwd=2023268;"); ;
+            con = new MySqlConnection("Server=cours.cegep3r.info;Database=2023268-zakaria-el-bahodi;Uid=2023268;Pwd=2023268;");
             liste = new ObservableCollection<Trajet>();
             listeF = new ObservableCollection<Trajet>();
             listeR = new ObservableCollection<Trajet>();
@@ -38,7 +39,7 @@ namespace App1
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
             commande.CommandText = "select id_trajet,date,nom,heure_depart,ville_arrivee,heure_arrivee,type_vehicule,nb_place,prix,usager from trajet,ville " +
-                "where trajet.ville=ville.id_ville and date>=CURDATE();";
+                "where trajet.ville=ville.id_ville and date>=CURDATE() and nb_place>0;";
 
             con.Open();
             MySqlDataReader r = commande.ExecuteReader();
@@ -187,19 +188,53 @@ namespace App1
             }
         }
         public int Resa(Trajet c)
+        {
+            int Id_trajet = c.Idtra;            
+            int retour = 0;
+            MySqlCommand commande = new MySqlCommand();
+            commande.Connection = con;
+            commande.CommandText = "update trajet,usager set nb_place = nb_place - 1 Where id_trajet = @id_trajet ;";
+                
+            commande.Parameters.AddWithValue("@id_trajet", Id_trajet);           
+            con.Open();
+            commande.Prepare();
+            retour = commande.ExecuteNonQuery();
+            con.Close();
+            return retour;
+        }
+        public int ResaP(Trajet c)
 
         {
             int Id_trajet = c.Idtra;
-            
+
             int retour = 0;
 
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
-            commande.CommandText = "update trajet,usager set nb_place = nb_place-1 Where id_trajet = @id_trajet  ;" +
-                "update usager,trajet set portefeuille=portefeuille+prix  where id_trajet=@id_trajet and id_usager=trajet.usager;" +
-                "update usager,trajet set gain=gain+prix  where id_trajet=@id_trajet and id_usager=trajet.usager;";
+            commande.CommandText = 
+                "update usager, trajet set portefeuille = portefeuille + prix  where id_trajet = @id_trajet and id_usager = trajet.usager;";
 
-            commande.Parameters.AddWithValue("@id_trajet", Id_trajet);           
+            commande.Parameters.AddWithValue("@id_trajet", Id_trajet);
+            con.Open();
+            commande.Prepare();
+            retour = commande.ExecuteNonQuery();
+
+            con.Close();
+
+            return retour;
+        }
+        public int ResaG(Trajet c)
+
+        {
+            int Id_trajet = c.Idtra;
+
+            int retour = 0;
+
+            MySqlCommand commande = new MySqlCommand();
+            commande.Connection = con;
+            commande.CommandText =  "update usager, trajet set gain = gain + prix  where id_trajet = @id_trajet and id_usager = trajet.usager; ";
+
+            commande.Parameters.AddWithValue("@id_trajet", Id_trajet);
             con.Open();
             commande.Prepare();
             retour = commande.ExecuteNonQuery();

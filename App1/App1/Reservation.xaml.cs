@@ -54,12 +54,11 @@ namespace App1
             if (valide == 0 )
             {
                 Trajet c = listTrajet.SelectedItem as Trajet;
-
-
                 GestionResa.getInstance().Ajouter_Resa(GestionUsagers.getInstance().Id_usager , GestionUsagers.getInstance().Email, c);
                 GestionBD.getInstance().Resa(c);
+                GestionBD.getInstance().ResaP(c);
+                GestionBD.getInstance().ResaG(c);
             }
-
         }
         private void reset()
         {

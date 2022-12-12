@@ -25,13 +25,15 @@
             <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  Visibility="Collapsed"/>
             <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr" Visibility="Collapsed" />
             <NavigationViewItem Content="Reservations " Icon="List" Name="ListRes" Visibility="Collapsed" />
+                        
 
 
 
 
             <NavigationViewItemSeparator />
-                        
-                    </NavigationView.MenuItems>
+            <NavigationViewItem Content="Deconnexion" Icon="Previous" Name="dec"   Visibility="Collapsed"/>
+
+        </NavigationView.MenuItems>
                     
                     <Frame x:Name="mainFrame" Grid.Column="1" />
 

@@ -55,6 +55,7 @@ namespace App1
                             Res.Visibility= Visibility.Visible;
                             Ins.Visibility = Visibility.Collapsed;
                             Conn.Visibility = Visibility.Collapsed;
+                            dec.Visibility = Visibility.Visible;
 
                         }
                         if (GestionUsagers.getInstance().Statut.Equals("Chauffeur"))
@@ -65,6 +66,7 @@ namespace App1
                             Ins.Visibility = Visibility.Collapsed;
                             Conn.Visibility = Visibility.Collapsed;
                             ListRes.Visibility = Visibility.Visible;
+                            dec.Visibility = Visibility.Visible;
 
                         }
                         if (GestionUsagers.getInstance().Statut.Equals("Admin"))
@@ -75,6 +77,7 @@ namespace App1
                             AjtVille.Visibility = Visibility.Visible;
                             Conn.Visibility = Visibility.Collapsed;
                             Admintr.Visibility = Visibility.Visible;
+                            dec.Visibility = Visibility.Visible;
 
                         }
                         else
@@ -106,6 +109,10 @@ namespace App1
                 case "ListRes":
                     mainFrame.Navigate(typeof(ListeRes));
                     break;
+                case "dec":
+                    deconnexion();
+                    break;
+
                 default:
                     break;
             }
@@ -115,6 +122,22 @@ namespace App1
         {
             if (mainFrame.CanGoBack)
                 mainFrame.GoBack();
+        }
+        private void deconnexion()
+        {
+            Aff.Visibility = Visibility.Visible;
+            AjtTrajet.Visibility = Visibility.Collapsed;
+            Ins.Visibility = Visibility.Visible;
+            Conn.Visibility = Visibility.Visible;
+            ListRes.Visibility = Visibility.Collapsed;
+            dec.Visibility = Visibility.Collapsed;
+            Admintr.Visibility = Visibility.Collapsed;
+            AjtVille.Visibility = Visibility.Collapsed;
+            GestionUsagers.getInstance().Id_usager = "";
+            GestionUsagers.getInstance().Nom = "";
+            GestionUsagers.getInstance().Statut = "";
+            GestionUsagers.getInstance().Email = "";
+
         }
 
         

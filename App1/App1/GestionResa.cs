@@ -18,7 +18,7 @@ namespace App1
 
         public GestionResa()
         {
-            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_eq7;Uid=2023268;Pwd=2023268;"); ;
+            con = new MySqlConnection("Server=cours.cegep3r.info;Database=2023268-zakaria-el-bahodi;Uid=2023268;Pwd=2023268;");
             liste3 = new ObservableCollection<Resa>();
             liste = new ObservableCollection<Resa>();
         }
