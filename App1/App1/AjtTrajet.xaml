@@ -102,23 +102,7 @@
 
                 </Grid>
 
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Margin="10 10 10 10" Grid.Column="0" >
-                        <TextBox x:Name="tbxEmail" Header="Email"/>
-                        <TextBlock x:Name="tblErreurEmail" Text="Entrez un email valide" Foreground="Red"  Visibility="Collapsed"/>
-                    </StackPanel>
-                    <StackPanel Margin="10 10 10 10" Grid.Column="1">
-
-                        <TextBox x:Name="tbxId" Header="Votre matricule "/>
-                        <TextBlock x:Name="tblErreurId" Text="Entrez un id valide" Foreground="Red"  Visibility="Collapsed"/>
-                    </StackPanel>
-
-
-                </Grid>
+               
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />

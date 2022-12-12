@@ -195,7 +195,10 @@ namespace App1
 
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
-            commande.CommandText = "update Trajet set nb_place = nb_place-1 Where id_trajet = @id_trajet";
+            commande.CommandText = "update trajet,usager set nb_place = nb_place-1 Where id_trajet = @id_trajet  ;" +
+                "update usager,trajet set portefeuille=portefeuille+prix  where id_trajet=@id_trajet and id_usager=trajet.usager;" +
+                "update usager,trajet set gain=gain+prix  where id_trajet=@id_trajet and id_usager=trajet.usager;";
+
             commande.Parameters.AddWithValue("@id_trajet", Id_trajet);           
             con.Open();
             commande.Prepare();

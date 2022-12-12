@@ -19,11 +19,12 @@ namespace App1
         ObservableCollection<Ville> listeV;
         bool connexion =false;
         static GestionUsagers gestionUsagers = null;
-        string nom ,email,statut,mdp;
+        string nom ,email,statut,mdp,id_usager;
 
         public string Nom { get => nom; }
         public string Email { get => email; }
         public string Statut { get => statut;  }
+        public string Id_usager { get => id_usager; }
 
         public GestionUsagers()
         {
@@ -121,7 +122,7 @@ namespace App1
                 
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
-                commande.CommandText = " Select nom, statut from usager where email =@email and mot_de_passe = @mdp ";
+                commande.CommandText = " Select nom, statut, id_usager from usager where email =@email and mot_de_passe = @mdp ";
                 commande.Parameters.AddWithValue("@email", e);
                 commande.Parameters.AddWithValue("@mdp", m);
                 con.Open();
@@ -131,6 +132,8 @@ namespace App1
                     statut = r.GetString("statut");
                     connexion = true;
                     nom = r.GetString("nom");
+                    email = e;
+                    id_usager = r.GetString("id_usager");
 
                 }
                 else

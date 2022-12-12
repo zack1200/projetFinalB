@@ -91,16 +91,7 @@ namespace App1
                 tbxNbPlceErr.Visibility = Visibility.Visible;
                 valide += 1;
             }
-            if (tbxEmail.Text.Trim() == "")
-            {
-                tblErreurEmail.Visibility = Visibility.Visible;
-                valide += 1;
-            }
-            if (tbxId.Text.Trim() == "")
-            {
-                tblErreurId.Visibility = Visibility.Visible;
-                valide += 1;
-            }
+            
             if (Prix.SelectedIndex == -1)
             {
                 tblErreurPrixl.Visibility = Visibility.Visible;
@@ -126,8 +117,8 @@ namespace App1
                  Nbplace = NbrPlace.SelectedItem.ToString(),
                  Prix = Prix.SelectedItem.ToString() ,
                  Statut = "Disponible",
-                 Usager = tbxId.Text,
-                 Email = tbxEmail.Text,
+                 Usager = GestionUsagers.getInstance().Id_usager,
+                 Email = GestionUsagers.getInstance().Email,
                  
             };
                 GestionBD.getInstance().AjouterTrajet(t);
@@ -143,9 +134,7 @@ namespace App1
             tbxVilleFErr.Visibility = Visibility.Collapsed;
             tbxHrArrErr.Visibility = Visibility.Collapsed;
             tbxTypeErr.Visibility = Visibility.Collapsed;
-            tbxNbPlceErr.Visibility = Visibility.Collapsed;
-            tblErreurEmail.Visibility = Visibility.Collapsed;
-            tblErreurId.Visibility = Visibility.Collapsed;
+            tbxNbPlceErr.Visibility = Visibility.Collapsed;           
             tblErreurPrixl.Visibility = Visibility.Collapsed;
 
 

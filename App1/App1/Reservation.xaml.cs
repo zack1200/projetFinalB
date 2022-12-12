@@ -9,6 +9,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Org.BouncyCastle.Asn1.Misc;
 using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ namespace App1
                 Trajet c = listTrajet.SelectedItem as Trajet;
 
 
-
+                GestionResa.getInstance().Ajouter_Resa(GestionUsagers.getInstance().Id_usager , GestionUsagers.getInstance().Email, c);
                 GestionBD.getInstance().Resa(c);
             }
 

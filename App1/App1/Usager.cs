@@ -19,6 +19,7 @@ namespace App1
         string portefeuille;
         string gain;
         string entreprise;
+        string id_usager;
 
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
@@ -31,5 +32,6 @@ namespace App1
         public string Portefeuille { get => portefeuille; set => portefeuille = value; }
         public string Gain { get => gain; set => gain = value; }
         public string Entreprise { get => entreprise; set => entreprise = value; }
+        public string Id_usager { get => id_usager; set => id_usager = value; }
     }
 }

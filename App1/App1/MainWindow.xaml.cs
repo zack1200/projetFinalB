@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
+using Google.Protobuf.Collections;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -30,7 +31,9 @@ namespace App1
         {
             this.InitializeComponent();
             mainFrame.Navigate(typeof(Affichage));
+
         }
+        
         private async void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             var item = (NavigationViewItem)args.SelectedItem;
@@ -43,21 +46,15 @@ namespace App1
                     ConnexionAff dialog = new ConnexionAff();
                     dialog.XamlRoot = stk.XamlRoot;
                     dialog.DefaultButton = ContentDialogButton.Primary;
-
-
-
                     await dialog.ShowAsync();
-
-
-
                     if (dialog.Ok == true)
                     {
                         if (GestionUsagers.getInstance().Statut.Equals("Passager"))
                         {
                             //connexion.Visibility = Visibility.Collapsed;
-                            Aff.Visibility= Visibility.Visible;
-                            
-
+                            Res.Visibility= Visibility.Visible;
+                            Ins.Visibility = Visibility.Collapsed;
+                            Conn.Visibility = Visibility.Collapsed;
 
                         }
                         if (GestionUsagers.getInstance().Statut.Equals("Chauffeur"))
@@ -65,6 +62,19 @@ namespace App1
                             //connexion.Visibility = Visibility.Collapsed;
                             Aff.Visibility = Visibility.Visible;
                             AjtTrajet.Visibility = Visibility.Visible;
+                            Ins.Visibility = Visibility.Collapsed;
+                            Conn.Visibility = Visibility.Collapsed;
+                            ListRes.Visibility = Visibility.Visible;
+
+                        }
+                        if (GestionUsagers.getInstance().Statut.Equals("Admin"))
+                        {
+                            //connexion.Visibility = Visibility.Collapsed;
+                            Aff.Visibility = Visibility.Visible;
+                            AjtTrajet.Visibility = Visibility.Visible;
+                            AjtVille.Visibility = Visibility.Visible;
+                            Conn.Visibility = Visibility.Collapsed;
+                            Admintr.Visibility = Visibility.Visible;
 
                         }
                         else
@@ -93,12 +103,20 @@ namespace App1
                 case "Admintr":
                     mainFrame.Navigate(typeof(Admintr));
                     break;
+                case "ListRes":
+                    mainFrame.Navigate(typeof(ListeRes));
+                    break;
                 default:
                     break;
             }
 
         }
+        private void monNavigationView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        {
+            if (mainFrame.CanGoBack)
+                mainFrame.GoBack();
+        }
 
-
+        
     }
 }

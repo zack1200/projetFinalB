@@ -14,20 +14,22 @@
    
 
                 <NavigationView x:Name="stk" PaneDisplayMode="Left" PaneTitle="Gestion projet" Grid.Column="0" IsBackEnabled="True"
-                        SelectionChanged="NavigationView_SelectionChanged">
+                        SelectionChanged="NavigationView_SelectionChanged" BackRequested="monNavigationView_BackRequested">
 
                     <NavigationView.MenuItems>
                         <NavigationViewItem Content="Afficher les trajets" Icon="Home" Name="Aff"  />
-                        <NavigationViewItem Content="Connexion" Icon="Account" Name="Conn"  />
-                         <NavigationViewItem Content="Inscription" Icon="Account" Name="Ins" />
-                         <NavigationViewItem Content="Reservation d'un trajet " Icon="Home" Name="Res"  Visibility="Visible"/>
-                        <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  Visibility="Visible"/>
-                        <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  Visibility="Visible"/>
-                        <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr" Visibility="Visible" />
-                        
-                        
+            <NavigationViewItem Content="Connexion" Icon="Account" Name="Conn"   Visibility="Visible"/>
+            <NavigationViewItem Content="Inscription" Icon="Account" Name="Ins"  Visibility="Visible"/>
+                         <NavigationViewItem Content="Reservation d'un trajet " Icon="Home" Name="Res"  Visibility="Collapsed"/>
+            <NavigationViewItem Content="Ajouter une ville " Icon="Add" Name="AjtVille"  Visibility="Collapsed"/>
+            <NavigationViewItem Content="Ajouter un trajet " Icon="Add" Name="AjtTrajet"  Visibility="Collapsed"/>
+            <NavigationViewItem Content="Resume des trajets " Icon="ShowResults" Name="Admintr" Visibility="Collapsed" />
+            <NavigationViewItem Content="Reservations " Icon="List" Name="ListRes" Visibility="Collapsed" />
 
-                        <NavigationViewItemSeparator />
+
+
+
+            <NavigationViewItemSeparator />
                         
                     </NavigationView.MenuItems>
                     
