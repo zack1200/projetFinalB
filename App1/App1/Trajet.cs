@@ -40,5 +40,11 @@ namespace App1
         public string Historique { get => historique; set => historique = value; }
         public int NumVD { get => numVD; set => numVD = value; }
         public int Idtra { get => idtra; set => idtra = value; }
+
+        public string CSV()
+        {
+            return villedep + "; " + villearr + ";" + Heurearr + ";" + Date ;
+        }
     }
+    
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using Microsoft.UI.Xaml;
+using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using System;
@@ -17,6 +18,8 @@ namespace App1
         ObservableCollection<Trajet> listeF;
         ObservableCollection<Trajet> listeR;
         static GestionBD gestionBD = null;
+        Window fenetre;
+        public Window Fenetre { get => fenetre; set => fenetre = value; }
 
         public GestionBD()
         {
@@ -101,7 +104,7 @@ namespace App1
             return listeF;
 
         }
-        public ObservableCollection<Trajet> rechercher_Trajet(string dateDebut, string dateFin)
+        public  ObservableCollection<Trajet> rechercher_Trajet(string dateDebut, string dateFin)
         {
             listeR.Clear();
 

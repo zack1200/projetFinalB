@@ -17,6 +17,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using MySqlX.XDevAPI;
 using System.Collections.ObjectModel;
+using Org.BouncyCastle.Asn1.X509;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -69,18 +70,23 @@ namespace App1
             var picker = new Windows.Storage.Pickers.FileSavePicker();
 
             /******************** POUR WINUI3 ***************************/
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(GestionBD.getInstance());
             WinRT.Interop.InitializeWithWindow.Initialize(picker, hWnd);
             /************************************************************/
 
-            picker.SuggestedFileName = "test2";
+            picker.SuggestedFileName = "liste trajet ";
             picker.FileTypeChoices.Add("Fichier texte", new List<string>() { ".csv" });
 
             //crée le fichier
             Windows.Storage.StorageFile monFichier = await picker.PickSaveFileAsync();
-            // La fonction ToString de la classe Client retourne: nom + ";" + prenom
 
-            await Windows.Storage.FileIO.WriteLinesAsync(monFichier, Csv.ConvertAll(x => x.ToString()), Windows.Storage.Streams.UnicodeEncoding.Utf8);
+            List<Trajet> liste = new List<Trajet>();
+            
+
+            //écrit dans le fichier chacune des lignes du tableau
+            //une boucle sera faite sur la collection et prendra chacun des objets de celle-ci
+            await Windows.Storage.FileIO.WriteLinesAsync(monFichier, liste.ConvertAll(x => x.CSV()));
+
         }
 
 
