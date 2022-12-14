@@ -138,6 +138,9 @@ namespace App1
             dec.Visibility = Visibility.Collapsed;
             Admintr.Visibility = Visibility.Collapsed;
             AjtVille.Visibility = Visibility.Collapsed;
+            Tick.Visibility = Visibility.Collapsed;
+            Res.Visibility = Visibility.Collapsed;
+
             GestionUsagers.getInstance().Id_usager = "";
             GestionUsagers.getInstance().Nom = "";
             GestionUsagers.getInstance().Statut = "";

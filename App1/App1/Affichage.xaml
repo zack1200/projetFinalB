@@ -51,13 +51,13 @@
                 </StackPanel>
                 <StackPanel Grid.Column="3"  Grid.Row="0" Margin="40" Background="Azure" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="center">
-                        <TextBlock x:Name="tbxNomEorr7" Text="type vehicule :" Foreground="Black" 
+                        <TextBlock x:Name="tbxNomEorr7" Text="Type vehicule :" Foreground="Black" 
                     Height="20"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                                     <TextBlock Text="{x:Bind Type}" Foreground="Black" 
                     Height="20"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="center">
-                        <TextBlock x:Name="tbxNomEokrr7" Text="place disponible :" Foreground="Black" 
+                        <TextBlock x:Name="tbxNomEokrr7" Text="Place disponible :" Foreground="Black" 
                     Height="20"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                                     <TextBlock Text="{x:Bind Nbplace}" Foreground="Black" 
                     Height="20"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />

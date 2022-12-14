@@ -21,6 +21,7 @@ namespace App1
         string entreprise;
         string id_usager;
 
+
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
         public string Email { get => email; set => email = value; }

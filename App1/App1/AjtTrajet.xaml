@@ -97,7 +97,7 @@
                             <x:String>4</x:String>
                             <x:String>5</x:String>
                         </ComboBox>
-                        <TextBlock x:Name="tbxNbPlceErr" Text="Veuillez choisir l'equipe" Foreground="red" Visibility="Collapsed" />
+                        <TextBlock x:Name="tbxNbPlceErr" Text="Veuillez choisir le nombre de passager " Foreground="red" Visibility="Collapsed" />
                     </StackPanel>
 
                 </Grid>
@@ -121,7 +121,7 @@
                 </Grid>
             </StackPanel>
             <Button Name="btAjouter"  Content="Ajouter"  Click="btAjouter_Click" Margin="20" HorizontalAlignment="Stretch"  />
-            <TextBlock x:Name="tbxValide"  Margin="10" HorizontalAlignment="Center" Text="le joeur a ete ajouter  " Foreground="Green"  Visibility="Collapsed"/>
+            <TextBlock x:Name="tbxValide"  Margin="10" HorizontalAlignment="Center" Text="le trajet a ete ajouter  " Foreground="Green"  Visibility="Collapsed"/>
 
 
 

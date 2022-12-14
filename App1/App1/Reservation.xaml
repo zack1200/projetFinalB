@@ -69,7 +69,7 @@
                     Height="50"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
                                 </StackPanel>
                                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="resa" Visibility="Visible">
-                                    <TextBlock Text="Reservation reussie" Foreground="Green" 
+                                    <TextBlock Text="Veuiller selectionner le trajet en clickant dessus " Foreground="Green" 
                                      Height="50" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" x:Name="tbxResa" />
                                 </StackPanel>
 

@@ -14,7 +14,23 @@
         <StackPanel>
         <Grid>
             <StackPanel Orientation="Vertical">
-            <StackPanel>
+                    <ListView x:Name="Gain"  >
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="local:Usager">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal"
+                                        Margin="5" HorizontalAlignment="Stretch">
+                                        <TextBlock Text="Les gains de la societe : " Margin="5,5,5,10" FontWeight="Normal" FontSize="20" Foreground="Green"></TextBlock>
+                                        <TextBlock Text="{x:Bind Gain}" Margin="5,5,5,10" FontWeight="Normal" FontSize="20"  />
+                                        <TextBlock Text="$ " Margin="5,5,5,10" FontWeight="Normal" FontSize="20" ></TextBlock>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <DatePicker Header="Choisir une date de debut " x:Name="tbxDatDebut" Padding="15"/>
                     <DatePicker Header="Choisir une date de fin " x:Name="tbxDatFin" Padding="15"/>

@@ -64,7 +64,8 @@ namespace App1
         private void reset()
         {
             tblErreurNom.Visibility = Visibility.Collapsed;
-            tblErreurPost.Visibility = Visibility.Collapsed;           
+            tblErreurPost.Visibility = Visibility.Collapsed;
+            tblEmp.Visibility = Visibility.Collapsed;
         }
     }
     

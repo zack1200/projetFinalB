@@ -34,6 +34,7 @@ namespace App1
             this.InitializeComponent();
             listTrajetsFini.ItemsSource = GestionBD.getInstance().GetTrajetsFini();
             listTrajets.ItemsSource = GestionBD.getInstance().GetTrajets();
+            Gain.ItemsSource = GestionUsagers.getInstance().GetGain();
         }
 
         private void btRecherche_Click(object sender, RoutedEventArgs e)

@@ -16,6 +16,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Google.Protobuf.WellKnownTypes;
+using System.Text.RegularExpressions;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -38,6 +39,7 @@ namespace App1
 
             int valide = 0;
             bool valide1 = true;
+            string expression = "^\\(\\d{3}\\)\\d{3}-\\d{4}$";
 
             reset();
 
@@ -46,6 +48,7 @@ namespace App1
                 tblErreurNom.Visibility = Visibility.Visible;
                 valide += 1;
             }
+
 
             if (tbxPrenom.Text.Trim() == "")
             {
@@ -82,11 +85,12 @@ namespace App1
             {
                 Statut = "Passager";
             }
-            if (tbxNum.Text.Trim() == "")
+            if (tbxNum.Text.Trim() == "" || Regex.IsMatch(tbxNum.Text, expression) == false)
             {
                 tblErreurNum.Visibility = Visibility.Visible;
                 valide += 1;
             }
+     
 
             Ville vi = listVille.SelectedItem as Ville;
 
@@ -104,9 +108,8 @@ namespace App1
                     Telephone = tbxNum.Text,
                 };
                 GestionUsagers.getInstance().AjouterUsager(u);
+                tblSucces.Visibility = Visibility.Visible;
             }
-
-
         }
         private void reset()
         {
@@ -117,8 +120,7 @@ namespace App1
             tblErreurVille.Visibility = Visibility.Collapsed;
             tblErreurMdp.Visibility = Visibility.Collapsed;
             tblErreurNum.Visibility = Visibility.Collapsed;
-
-
+            tblSucces.Visibility = Visibility.Collapsed;
         }
     }
 }

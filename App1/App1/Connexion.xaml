@@ -48,10 +48,11 @@
                     <RadioButton x:Name="br2" Content="Passager" />
                     <TextBlock x:Name="tbxStatutErr" Text="Veuillez choisir une position" Foreground="red" Visibility="Collapsed" />
                 </StackPanel>
-                <TextBox x:Name="tbxNum" Header="Numero cellulaire"/>
-                <NumberBox Header="Enter un numero:" Value="NaN" PlaceholderText="(111)222-3333" AcceptsExpression="True" />
+                <TextBox x:Name="tbxNum" Header="Numero cellulaire (xxx)xxx-xxxx"/>
+               
                 <TextBlock x:Name="tblErreurNum" Text="Entrez un numero valide" Foreground="Red"  Visibility="Collapsed"/>
                 <Button Name="btInsc"  Content="S'inscrire"  Click="btInsc_Click" Margin="20" HorizontalAlignment="Center" Foreground="White" Background="Blue"/>
+                <TextBlock x:Name="tblSucces" Text="L'usager a ete cree avec succes ." Foreground="Green"  Visibility="Collapsed"/>
             </StackPanel>
         
         

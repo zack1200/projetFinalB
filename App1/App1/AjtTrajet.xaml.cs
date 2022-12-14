@@ -122,6 +122,7 @@ namespace App1
                  
             };
                 GestionBD.getInstance().AjouterTrajet(t);
+                tbxValide.Visibility = Visibility.Visible;
             }
 
         }
@@ -136,6 +137,7 @@ namespace App1
             tbxTypeErr.Visibility = Visibility.Collapsed;
             tbxNbPlceErr.Visibility = Visibility.Collapsed;           
             tblErreurPrixl.Visibility = Visibility.Collapsed;
+            tbxValide.Visibility = Visibility.Collapsed;
 
 
         }

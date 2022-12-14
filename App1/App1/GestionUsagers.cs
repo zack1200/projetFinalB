@@ -41,6 +41,31 @@ namespace App1
 
             return gestionUsagers;
         }
+        public ObservableCollection<Usager> GetGain()
+        {
+            listeU.Clear();
+
+            MySqlCommand commande = new MySqlCommand();
+            commande.Connection = con;
+            commande.CommandText = "select sum(gain)*0.3 as gainsos from usager;";
+
+            con.Open();
+            MySqlDataReader r = commande.ExecuteReader();
+
+            while (r.Read())
+            {
+                Usager c = new Usager()
+                {                  
+                    Gain = r.GetString("gainsos"),
+                };
+                listeU.Add(c);
+            }
+
+            r.Close();
+            con.Close();
+            return listeU;
+        }
+
         public ObservableCollection<Ville> GetVille()
         {
             listeV.Clear();
