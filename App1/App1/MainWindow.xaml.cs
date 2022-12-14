@@ -31,6 +31,7 @@ namespace App1
         {
             this.InitializeComponent();
             mainFrame.Navigate(typeof(Affichage));
+            GestionBD.getInstance().Csv = this;
 
         }
         

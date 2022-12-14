@@ -70,7 +70,7 @@ namespace App1
             var picker = new Windows.Storage.Pickers.FileSavePicker();
 
             /******************** POUR WINUI3 ***************************/
-            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(GestionBD.getInstance());
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(GestionBD.getInstance().Csv);
             WinRT.Interop.InitializeWithWindow.Initialize(picker, hWnd);
             /************************************************************/
 
@@ -80,7 +80,8 @@ namespace App1
             //crée le fichier
             Windows.Storage.StorageFile monFichier = await picker.PickSaveFileAsync();
 
-            List<Trajet> liste = new List<Trajet>();
+            List<Trajet> liste = new List<Trajet>(GestionBD.getInstance().ListeR);
+
             
 
             //écrit dans le fichier chacune des lignes du tableau

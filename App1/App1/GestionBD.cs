@@ -13,6 +13,8 @@ namespace App1
 {
     internal class GestionBD
     {
+
+        MainWindow csv;
         MySqlConnection con;
         ObservableCollection<Trajet> liste;
         ObservableCollection<Trajet> listeF;
@@ -20,11 +22,14 @@ namespace App1
         static GestionBD gestionBD = null;
         Window fenetre;
         public Window Fenetre { get => fenetre; set => fenetre = value; }
+        public MainWindow Csv { get => csv; set => csv = value; }
+        internal ObservableCollection<Trajet> ListeR { get => listeR; set => listeR = value; }
 
         public GestionBD()
         {
             con = new MySqlConnection("Server=cours.cegep3r.info;Database=2023268-zakaria-el-bahodi;Uid=2023268;Pwd=2023268;");
             liste = new ObservableCollection<Trajet>();
+
             listeF = new ObservableCollection<Trajet>();
             listeR = new ObservableCollection<Trajet>();
         }
